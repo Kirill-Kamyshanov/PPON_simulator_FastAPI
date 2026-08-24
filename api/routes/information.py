@@ -2,7 +2,7 @@ from fastapi import APIRouter
 
 import data.money as money
 
-router = APIRouter(prefix="/finance", tags=["Finance"])
+router = APIRouter(prefix="/information", tags=["Information"])
 
 
 @router.get("/balance")

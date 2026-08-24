@@ -16,3 +16,9 @@ class ResponseRest(BaseModel):
     status: str = "Более-менее отдохнул"
     wasted: int
     current_balance: int
+
+
+class ResponseGoShopping(BaseModel):
+    status: str = "Купил вкусного всякого"
+    spent: int
+    current_balance: int

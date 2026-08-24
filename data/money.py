@@ -3,8 +3,6 @@ import random
 
 # Сумма денег на счёте ППОНА
 ppon_balance = 10000
-# Стоимость отдыха ППОНА
-rest_cost = 24000
 
 @dataclasses.dataclass
 class DailyWage:
