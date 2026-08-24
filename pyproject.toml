@@ -1,0 +1,16 @@
+[project]
+name = "fast-api-training"
+version = "0.1.0"
+description = "Учебное приложение FastAPI"
+readme = "README.md"
+authors = [
+    { name = "Kirill Kamyshnov", email = "nestor10000@mail.ru" }
+]
+requires-python = ">=3.14, <3.15"
+dependencies = [
+    "fastapi>=0.141.1",
+    "uvicorn>=0.52.4",
+]
+
+
+

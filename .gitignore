@@ -1,0 +1,7 @@
+# Python-generated files
+__pycache__/
+*.egg-info
+.idea
+
+# Виртуальное окружение
+.venv
