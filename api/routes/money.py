@@ -1,11 +1,11 @@
 from fastapi import APIRouter
 
-from data.money import ppon_balance
+import data.money as money
 
-router = APIRouter(prefix="/finance", tags=["finance"])
+router = APIRouter(prefix="/finance", tags=["Finance"])
 
 
 @router.get("/balance")
 def get_balance():
-    return {f"Остаток средств ППОНа: {ppon_balance}"}
+    return {f"Остаток средств ППОНа: {money.ppon_balance}"}
 

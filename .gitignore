@@ -1,7 +1,11 @@
 # Python-generated files
 __pycache__/
 *.egg-info
+.venv
+
+# Pycharm
 .idea
 
-# Виртуальное окружение
-.venv
+# Allure
+allure-results
+allure-report

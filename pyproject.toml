@@ -1,16 +1,55 @@
 [project]
 name = "fast-api-training"
-version = "0.1.0"
-description = "Учебное приложение FastAPI"
+version = "1.0.0"
+description = "Симулятор жизни Руслана Попова"
 readme = "README.md"
 authors = [
     { name = "Kirill Kamyshnov", email = "nestor10000@mail.ru" }
 ]
 requires-python = ">=3.14, <3.15"
 dependencies = [
+    "allure-pytest>=2.16.0",
     "fastapi>=0.141.1",
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
     "uvicorn>=0.52.4",
 ]
 
 
+[tool.pytest.ini_options]
+pythonpath = ["."]
+addopts = [
+    "--alluredir=allure-results"
+]
+
+
+[tool.ruff]
+line-length = 120
+target-version = "py314"
+extend-exclude = [".venv", "allure-results", ".pytest_cache"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # Ошибки PEP8 (лишние пробелы, неправильные отступы)
+    "W",    # Предупреждения PEP8 (Лишние пустые строки)
+    "F",    # Неиспользуемые импорты/переменные
+    "I",    # Сортировка импортов
+    "B",    # Потенциальные баги (assert False)
+    "UP",   # Устаревший синтаксис (type вместо isinstanse)
+    "RUF",  # ruff-specific
+    "SIM",  # flake8-simplify
+    "C4",   # flake8-comprehensions
+]
+ignore = [
+    "B008",    # function call in default arg (Pydantic Field)
+    "RUF001",  # cyrillic ambiguous chars (тексты на русском)
+    "RUF002",
+    "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]  # assert allowed in tests
+
+[tool.ruff.format]
+quote-style = "double"
 
